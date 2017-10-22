@@ -1,0 +1,11 @@
+$ git clone http://github.com/bitcoin/bitcoin.git
+
+ディレクトリに移動
+$ cd bitcoin
+
+#バージョンを確認
+$ git tag
+#リリース候補にはrcという文字がついている。
+
+#ローカルコピーとバージョンのソースコードを同期
+$ git checkout v0.11.1
