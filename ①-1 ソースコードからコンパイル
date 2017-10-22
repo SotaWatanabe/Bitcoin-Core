@@ -9,3 +9,14 @@ $ git tag
 
 #ローカルコピーとバージョンのソースコードを同期
 $ git checkout v0.11.1
+
+#ビルド準備
+$ ./autogen.sh
+$ ./configure
+#configureではまってしまった。解決する際に役立ったサイト
+https://github.com/bitcoin/bitcoin/issues/9541
+https://github.com/bitcoin/bitcoin/blob/master/doc/build-osx.md
+https://qiita.com/akase244/items/43d1b345b74ec222065c#openssl%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+
+#コンパイル
+$ make
