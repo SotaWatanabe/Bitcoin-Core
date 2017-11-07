@@ -147,3 +147,6 @@ $ bitcoin-cli encryptwallet [password]
 wallet encrypted; Bitcoin server stopping, restart to run with encrypted wallet. 
 The keypool has been flushed and a new HD seed was generated (if you are using HD). You need to make a new backup.
 #ウォレットが暗号化されたかどうかはgetinfoで確認できる。実行結果にunlock_untilという項目が追加される。
+
+#暗号化の解除
+$ bitcoin-cli walletpassphrase [password] 360
