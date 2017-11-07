@@ -1,0 +1,4 @@
+#Bitcoin Core is probably already running.とでた時の対処法
+$ ps aux | grep bitcoind
+#まだ動いているregtestを確認し、killする
+$ kill プロセスのID
