@@ -1,2 +1,8 @@
 #一発で入るようになった！
-brew install bitcoin
+$ brew install bitcoin
+
+#bitcoindが正常にインストールされているかの確認。
+$ which bitcoind
+/usr/local/bin/bitcoind
+$ which bitcoin-cli
+/usr/local/bin/bitcoin-cli
