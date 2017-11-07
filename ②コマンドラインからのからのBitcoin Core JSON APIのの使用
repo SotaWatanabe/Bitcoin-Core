@@ -151,4 +151,40 @@ The keypool has been flushed and a new HD seed was generated (if you are using H
 #暗号化の解除
 $ bitcoin-cli walletpassphrase [password] 360
 
+#バックアップウォレットを作成 今回はwallet.backupという名前
+$ bitcoin-cli backupwallet wallet.backup
 
+#バックアップウォレットを用いてリストアする。
+$ bitcoin-cli importwallet wallet.backup
+Error: Please enter the wallet passphrase with walletpassphrase first.
+
+#最初にウォレットのロックを解除しなければいけない。
+$ bitcoin-cli walletpassphrase [password] 360
+$ bitcoin-cli importwallet wallet.backup
+
+#人間が読める形に変換する為にダンプする。
+$ bitcoin-cli dumpwallet wallet.txt
+$ more wallet.txt
+# Wallet dump created by Bitcoin v0.15.0.1-gfb7b5293844
+# * Created on 2017-11-07T18:01:09Z
+# * Best block at time of backup was 386438 (00000000000000000e2df9cf8523ac408eb5bf7c6bf1d6a7031ac57b29defd7c),
+#   mined on 2015-12-02T22:35:04Z
+
+# extended private masterkey: xprv9s21ZrQH143K3LJULz1jneuQtQGqrweRaGtaPNmKvLDpKczWupxN3YX2Dhx56UPX1cZ6wbRWaLURjAATPa88gDs8aNyLPWeBfXs6sxtmpEi
+
+L2HxNCgawbsMg3795AgUxm6gApAuWcKF7DfXDupvEH8Wud96mH71 2017-10-21T20:35:21Z change=1 # addr=113J7V4D9Xf4VnCbduE91n1ikHuWGbQtci hdkeypath=m/0'/0'/175'
+L4QxxdwiSRAcHx3efMzeSbRoqrD7umRjw95yCpUqYPpk2b4aNfoF 2017-10-21T20:35:21Z change=1 # addr=115jb6Kzwhf8LkKBVRoK1mgryCuP98Rg6U hdkeypath=m/0'/0'/353'
+KzPJEHkyHAD2VtA346wouscXiZgjdLErtu8YgyeDbd89zcmRGFQK 2017-10-21T20:35:21Z change=1 # addr=1166JAVw6yweZ1AgTuA479GkXufUw1fW32 hdkeypath=m/0'/0'/279'
+L3JSw8XWfFm9wgguWL9wuKtFZGjoa3GK5Ln5DdBp9kNVUPKPTKWL 2017-10-21T20:35:21Z change=1 # addr=18WMQCfdP4ktfdo1QvhAPtwM2q9zcxieG hdkeypath=m/0'/0'/99'
+L2DyM7JhbaenxFK2BUSjdxWTxBxGKJasghsKPnni3ZkhDjSWMmfy 2017-10-21T20:35:21Z change=1 # addr=19WbrEtuSeEAUwFukyHaUEEJk2EsWEmhU hdkeypath=m/0'/0'/157'
+KypJvzUpyrLJ8btwpv6KU2DM5Uze5i1nfmBxdmRFqQSic6GQtJzC 2017-10-21T20:35:21Z change=1 # addr=1MVSxxxEWeq5t5gkbwhuNDJBJ2aYUjH4c hdkeypath=m/0'/0'/115'
+L4c4xCy821FnDuyGpTgoprFUwgk1Jbp1nLSpskFmFEbbdmidbYbs 2017-10-21T20:35:21Z change=1 # addr=1TuwBJzAyAxm5pFBRJ5uPXfFP6L167hh9 hdkeypath=m/0'/0'/200'
+KwdhWTZzmYbRBFcztXPpzx62D71eiCz2qfS6aKzAFsLoRHxv6oQ2 2017-10-21T20:35:21Z change=1 # addr=1U5KafQushuunYLjCbTzuMG5jvCYFhkUG hdkeypath=m/0'/0'/94'
+
+# ウォレットアドレスを作成する
+# 他のウォレットからbitcoindウォレットに少額を送る時に、Bitcoinアドレスを使うことができる。今回は以下で作るウォレットに0.050BTCを送る。
+$ bitcoin-cli getnewaddress
+1A2UqDSpbDC5S1E7wz3QJhgjuNAZ89biGH
+
+#bitcoindクライアントに問い合わせることで、このBitcoinアドレスにbitcoinが届いたか？0.050BTCになるために何回の承認が必要とされてたか？を知ることができる。
+# P49
