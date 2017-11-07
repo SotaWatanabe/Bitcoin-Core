@@ -150,3 +150,5 @@ The keypool has been flushed and a new HD seed was generated (if you are using H
 
 #暗号化の解除
 $ bitcoin-cli walletpassphrase [password] 360
+
+
