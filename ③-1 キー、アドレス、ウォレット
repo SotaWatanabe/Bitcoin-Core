@@ -10,5 +10,6 @@ $ bitcoin-cli getnewaddress
 $ bitcoin-cli dumpprivkey 1A2UqDSpbDC5S1E7wz3QJhgjuNAZ89biGH
 #ここに秘密鍵が出て来るが、秘密鍵は公開してはいけない
 
-P72
-
+# Bitcoinアドレスを作るときに使うアルゴリズムは、Secure Hash Algorithm (SHA) とRACE IntegrityPrimitives Evaluation Message Digest (RIPEMD) で、
+# 中でも SHA256とRIPEMD160が使われます。
+# 公開鍵KのSHA256ハッシュを計算し、さらにこの結果のRIPEMD160ハッシュを計算することで、160bit(20byte)の数字を作り出す。
