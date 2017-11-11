@@ -1,0 +1,9 @@
+#アカウント生成
+$ bitcoin-cli -regtest getnewaddress testuser1
+# testuser1は任意の文字列。Bitcoin Coreのアカウントを管理するために付与する識別子
+# 結果
+# msC9BRJBWgb39zGMn1EfiR7bcrRSFdh6ok
+# この値は送金などの時に使用する。
+
+# 残高の確認
+$ bitcoin-cli -regtest getbalance testuser1
