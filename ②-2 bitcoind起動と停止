@@ -4,4 +4,4 @@ $ bitcoind
 $ bitcoind -regtest -demon
 
 #停止
-bitcoin-cli -regtest -stop
+$ bitcoin-cli -regtest -stop
