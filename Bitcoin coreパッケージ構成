@@ -1,0 +1,8 @@
+① bitcoin. -qt
+ビットコインのGUIクライアント。ウォレットに該当する。
+
+② bitcoin-daemon
+バックエンドで動くことを目的とするクライアント。JSON-RPCによる開発者向けAPIを提供
+
+③ bitcoin-cli
+bitcoindに対してコマンドで指示を出す際に使う。
