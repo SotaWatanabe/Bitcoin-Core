@@ -110,7 +110,7 @@ if __name__ == "__main__":
   main()
   ------------------------------------------------------------------------------
  
- #結果
+ #実行
  $ python select-utxo.py 50000000
 For transaction amount 50000000 Satoshis (0.500000 bitcoin) use:
 ([<7dbc497969c7475e45d952c4a872e213fb15d45e5cd3473c386a71a1b0c136a1:0 with 25000000
