@@ -1,0 +1,2 @@
+# ブロックの作成
+$ bitcoin-cli -regtest generate 1
