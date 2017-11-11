@@ -1,0 +1,5 @@
+#ビットコインは報酬を受け取ってから100ブロック経過しないと送金などに利用できないので101個目のブロックを生成する。
+$ bitcoin-cli -regtest generate 101
+
+#現在のブロック数の確認
+$ bitcoin-cli -regtest getblockcount
