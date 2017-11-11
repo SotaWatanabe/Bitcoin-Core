@@ -1,0 +1,39 @@
+# P117
+# あるBitcoinアドレスに関連したUTXOを見つけ出す blockchain.info APIを呼び出すスクリプト
+--------------------------------------------------------------------------------
+#get unspent outputs from blockchain API
+
+import json
+import request
+
+# example address
+address = '1Dorian4RoXcnBv9hnQ4Y2C1an6NJ4UrjX'
+# The API URL is https://blockchain.info/unspent?active=<address>
+# It returns a JSON object with a list "unspent_outputs", containing UTXO, like this:
+#{ "unspent_outputs":[
+# {
+# "tx_hash":"ebadfaa92f1fd29e2fe296eda702c48bd11ffd52313e986e99ddad9084062167",
+# "tx_index":51919767,
+# "tx_output_n": 1,
+# "script":"76a9148c7e252f8d64b0b6e313985915110fcfefcf4a2d88ac",
+# "value": 8000000,
+# "value_hex": "7a1200",
+# "confirmations":28691
+# },
+# ...
+#]}
+resp = requests.get('https://blockchain.info/unspent?active=%s' % address)
+utxo_set = json.loads(resp.text)["unspent_outputs"]
+for utxo in utxo_set:
+  print ("%s:%d - %ld Satoshis" % (utxo['tx_hash'], utxo['tx_output_n'],
+utxo['value']))
+--------------------------------------------------------------------------------
+
+#実行
+$ python get-utxo.py
+ebadfaa92f1fd29e2fe296eda702c48bd11ffd52313e986e99ddad9084062167:1 - 8000000 Satoshis
+6596fd070679de96e405d52b51b8e1d644029108ec4cbfe451454486796a1ecf:0 - 16050000
+Satoshis
+74d788804e2aae10891d72753d1520da1206e6f4f20481cc1555b7f2cb44aca0:0 - 5000000 Satoshis
+b2affea89ff82557c60d635a2a3137b8f88f12ecec85082f7d0a1f82ee203ac4:0 - 10000000
+Satoshis
