@@ -1,0 +1,7 @@
+#起動
+$ bitcoind
+# or
+$ bitcoind -regtest -demon
+
+#停止
+bitcoin-cli -regtest -stop
