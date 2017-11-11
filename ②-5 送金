@@ -1,0 +1,3 @@
+# トランザクションの発行
+# bitcoin-cli -regtest sendtoaddress [送金アカウント] [送金量]
+$ 
