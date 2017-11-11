@@ -1,3 +1,35 @@
 # トランザクションの発行
 # bitcoin-cli -regtest sendtoaddress [送金アカウント] [送金量]
-$ 
+$ bitcoin-cli -regtest sendtoaddress msC9BRJBWgb39zGMn1EfiR7bcrRSFdh6ok 10
+# 結果:a895541eb4a3ec176e1d3e6626a81c8b69d95ee895e462a86e5ba46e280b330c
+
+# 確定したトランザクションの確認
+$ bitcoin-cli -regtest listunspent
+# 未確定トランザクションの確認
+$ bitcoin-cli -regtest listunspent 0
+[
+  {
+    "txid": "a895541eb4a3ec176e1d3e6626a81c8b69d95ee895e462a86e5ba46e280b330c",
+    "vout": 0,
+    "address": "mkD2Q8xWFV4F5YaK4DGTHP2YYccATxewub",
+    "scriptPubKey": "76a91433749175a7fe452e39f42eef299f88d9eca97d4788ac",
+    "amount": 39.99996160,
+    "confirmations": 0,
+    "spendable": true,
+    "solvable": true,
+    "safe": true
+  },
+  {
+    "txid": "a895541eb4a3ec176e1d3e6626a81c8b69d95ee895e462a86e5ba46e280b330c",
+    "vout": 1,
+    "address": "msC9BRJBWgb39zGMn1EfiR7bcrRSFdh6ok",
+    "account": "testuser1",
+    "scriptPubKey": "76a9148012b1677f75b156b7f2b4a2a07d23b0a664e78988ac",
+    "amount": 10.00000000,
+    "confirmations": 0,
+    "spendable": true,
+    "solvable": true,
+    "safe": true
+  }
+]
+# a895541eb4a3ec176e1d3e6626a81c8b69d95ee895e462a86e5ba46e280b330cがあることが確認できる。
