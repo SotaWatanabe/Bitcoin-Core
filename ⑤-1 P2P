@@ -1,0 +1,2 @@
+#ピアコネクションの表示
+$ bitcoin-cli getpeerinfo
